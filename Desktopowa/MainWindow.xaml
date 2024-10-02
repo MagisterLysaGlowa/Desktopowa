@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktopowa"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Nadaj przesyłkę" Height="300" Width="600">
+    <Grid Margin="35,24,35,2">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            
+            <GroupBox Grid.Row="0" Width="200" Margin="0,0,0,8" HorizontalAlignment="Left">
+                <GroupBox.Header>
+                    <Label Content="Rodzaj przesyłki"/>
+                </GroupBox.Header>
+
+                <StackPanel>
+                    <RadioButton Content="Pocztówka" GroupName="radioGroup" IsChecked="True"/>
+                    <RadioButton Content="List" GroupName="radioGroup"/>
+                    <RadioButton Content="Paczka" GroupName="radioGroup"/>
+                </StackPanel>
+            </GroupBox>
+            <Button Content="Sprawdź cenę" Grid.Row="1" Width="200" HorizontalAlignment="Left"/>
+            <Grid Grid.Row="2" Margin="0,10,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Image Source="Images/list.png" Grid.Column="0"/>
+                <Label Content="Cena: 1,5zł" Grid.Column="1" FontWeight="Bold" FontSize="18" Margin="10"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.Row="0">
+            <GroupBox Margin="0,0,0,35">
+                <GroupBox.Header>
+                    <Label Content="Dane adresowe"/>
+                </GroupBox.Header>
+
+                <StackPanel Margin="0,0,0,20">
+                    <Label Content="Ulica z numerem"/>
+                    <TextBox />
+                    <Label Content="Kod pocztowy"/>
+                    <TextBox />
+                    <Label Content="Miasto"/>
+                    <TextBox />
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Button Content="Zatwierdź" Grid.Row="1" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
